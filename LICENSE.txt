@@ -1,3 +1,11 @@
+Note:
+This project uses the MIT License.
+
+You are free to use, modify, and host this bot.
+Please do not reupload this project as your own or sell it as a standalone bot.
+
+---
+
 MIT License
 
 Copyright (c) 2026 Scoofyx
