@@ -5,11 +5,9 @@ module.exports = {
   async execute(member, client) {
     const s = client.settings;
 
-    // ── Auto role ───────────────────────────────────────────
     const autoRole = client.ids.AUTO_ROLE;
     if (autoRole) member.roles.add(autoRole).catch(() => {});
 
-    // ── Welcome message ─────────────────────────────────────
     if (!s.welcome_system) return;
 
     const channelId = client.ids.WELCOME_CHANNEL;
