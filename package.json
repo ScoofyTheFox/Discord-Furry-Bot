@@ -1,7 +1,7 @@
 {
-  "name": "pawbot",
+  "name": "furbot",
   "version": "4.0.0",
-  "description": "🐾 Single-server Discord bot — Railway free tier, no database",
+  "description": "🐾 EXTREMELY customizable furry Discord bot template, ready for Railway, database optional",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
