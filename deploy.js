@@ -1,8 +1,3 @@
-// Run this once to register slash commands with Discord:
-//   node deploy.js
-//
-// Re-run any time you add or remove commands.
-
 require('dotenv').config();
 const { REST, Routes } = require('discord.js');
 const { SYSTEMS } = require('./utils/loader');
@@ -26,7 +21,6 @@ for (const folder of fs.readdirSync(commandsPath).sort()) {
   const folderPath = path.join(commandsPath, folder);
   if (!fs.statSync(folderPath).isDirectory()) continue;
 
-  // Skip disabled systems
   const key = SYSTEMS[folder];
   if (key && settings[key] === false) {
     console.log(`⏭️  [${folder}] disabled — skipping`);
