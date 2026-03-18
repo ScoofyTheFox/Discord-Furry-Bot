@@ -435,9 +435,7 @@ furry_vibes: [
   'just vibes honestly'
 ]
 
-
 // ── Fursuit check ─────────────────────────────────────────────
-// Channel set manually OR via /setup-channels (/setup requires JSONBin ⚠️)
 
 fursuit_vote_emojis:  ['❤️', '🔥', '✨', '🐾', '💖', '👍', '⭐'],
 fursuit_ping_on_post: false,
@@ -459,7 +457,8 @@ fun_8ball_good: [
   'Absolutely.',
   'You already know the answer.',
   '100% yes.',
-  'Signs point to yes.'
+  'Signs point to yes.',
+  'the vibes say yes fr'
 ],
 
 fun_8ball_neutral: [
@@ -468,7 +467,8 @@ fun_8ball_neutral: [
   'Cannot predict now.',
   'Maybe.',
   'Could go either way.',
-  'I’m not sure…'
+  'I’m not sure…',
+  'the vibes are unclear',
 ],
 
 fun_8ball_bad: [
@@ -477,7 +477,8 @@ fun_8ball_bad: [
   'Very doubtful.',
   'Absolutely not.',
   'Yeah… no.',
-  'Not happening.'
+  'Not happening.',
+  'the vibes said NO'
 ],
 
 
@@ -497,7 +498,7 @@ fun_rate_responses: {
 },
 
 
-// compliments (cute + sus + funny)
+// compliments
 fun_compliments: [
   'has the most amazing energy in this server 💛',
   'is criminally underrated and deserves more hugs 🤗',
@@ -507,21 +508,22 @@ fun_compliments: [
   'is an absolute icon 💅',
   'deserves all the headpats 🐾',
   'is too wholesome for this world 🥺',
-  'has elite vibes 💫',
 
-  // goofy / furry
+  // goofy / weird
   'is illegally cute 🐾',
   'has maximum floof energy',
   'is dangerously adorable',
-  'is too cute to be trusted',
   'is 100% cuddle certified',
   'has unmatched furry rizz',
-  'is causing emotional damage (in a good way)',
-  'is making the server slightly more gay'
+  'is giving chaotic cute energy',
+  'is suspiciously huggable',
+  'is a certified cuddle gremlin',
+  'is radiating fluffy chaos',
+  'is causing emotional damage (positive)',
 ],
 
 
-// roasts (funny + slightly unhinged)
+// roasts (weird but safe)
 fun_roasts: [
   'has the personality of a wet sock.',
   'makes onions cry.',
@@ -532,14 +534,16 @@ fun_roasts: [
   'has NPC energy.',
   'is still loading…',
 
-  // furry goofy
+  // goofy furry weird
   'definitely says “owo” unironically.',
   'barks at 3am.',
   'is one tail wag away from chaos.',
   'would hiss in public.',
   'acts normal but definitely isn’t.',
   'is 90% fluff, 10% problem.',
-  'has “don’t touch me” and “please hug me” energy'
+  'has permanent zoomies.',
+  'is built like a side quest.',
+  'has chaotic gremlin firmware installed.',
 ],
 
 
@@ -553,7 +557,8 @@ fun_facts: [
   'Bananas are technically berries.',
   'Cows have best friends.',
   'Octopuses have three hearts.',
-  'Cats can’t taste sweetness.'
+  'Cats can’t taste sweetness.',
+  'Some foxes laugh when they play.'
 ],
 
 
@@ -571,11 +576,16 @@ fun_wyr: [
   ['Live in a forest', 'Live in a city'],
   ['Be fluffy but hot', 'Be sleek but cold'],
   ['Be rich but lonely', 'Be poor but loved'],
-  ['Have infinite snacks', 'Never gain weight']
+  ['Have infinite snacks', 'Never gain weight'],
+
+  // weird ones
+  ['Have infinite headpats', 'Give infinite headpats'],
+  ['Have permanent zoomies', 'Be permanently eepy'],
+  ['Be 100% fluff', 'Be 100% chaos'],
 ],
 
 
-// ── Extra interaction messages ─────────────────────────
+// ── Extra interaction ─────────────────────
 
 // hugs
 fun_hug_messages: [
@@ -584,37 +594,37 @@ fun_hug_messages: [
   'gently hugs {user} 💛',
   'pulls {user} into a cuddle pile',
   'hugs {user} a little too tightly…',
-  'wraps tail around {user} and hugs them',
-  'snuggles {user}'
+  'wraps tail around {user}',
+  'snuggles {user}',
+  'refuses to let go of {user}',
+  'gives {user} a chaotic hug',
 ],
 
-// kisses (safe but sus)
+// kisses (safe weird)
 fun_kiss_messages: [
   'gives {user} a lil nose boop 💕',
   'kisses {user} on the cheek 🐾',
   'gives {user} a soft kiss',
   'boops {user} and runs away',
-  'gives {user} a shy kiss'
+  'gives {user} a shy kiss',
+  'boops {user} aggressively',
+  'gives {user} a chaotic smooch',
 ],
 
 // slap
 fun_slap_messages: [
   'slaps {user} 💥',
-  'bonks {user} with a bat',
+  'bonks {user}',
   'lightly smacks {user}',
+  'bonks {user} with chaotic energy',
 ],
 
-// ship
+// ship (safe only)
 fun_ship_messages: [
   '{user1} ❤️ {user2} = 100%',
   '{user1} and {user2} are kinda cute ngl',
   '{user1} + {user2} = chaotic couple',
-
-  // goofy
-  '{user1} x {user2} = suspiciously cute',
-  '{user1} and {user2} definitely cuddle',
-  '{user1} and {user2} are acting kinda sus',
   '{user1} x {user2} = fluffy chaos',
   '{user1} and {user2} share one braincell',
-  '{user1} and {user2} are not beating the allegations'
+  '{user1} and {user2} would definitely cuddle',
 ],
