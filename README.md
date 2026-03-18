@@ -1,96 +1,130 @@
-# 🐾 PawBot — Desktop Setup Guide
+# 🐾 FurBot
 
-Follow these steps to run PawBot on your PC for testing.
+### Customizable Furry Discord Bot Template
 
----
-
-## Step 1 — Install Node.js
-
-Download and install from **nodejs.org** — get the LTS version.
-
----
-
-## Step 2 — Fill in `.env`
-
-Open the `.env` file in this folder and fill in your values:
-
-```
-BOT_TOKEN=    ← from discord.com/developers → your app → Bot tab → Reset Token
-CLIENT_ID=    ← from discord.com/developers → your app → General Information
-GUILD_ID=     ← right click your server in Discord → Copy Server ID
-JSONBIN_KEY=  ← sign up free at jsonbin.io → API Keys → Create Access Key
-```
-
-To get the Guild ID you need Developer Mode on in Discord:
-**Settings → Advanced → Developer Mode → ON**
-Then right click your server icon → **Copy Server ID**
+![GitHub stars](https://img.shields.io/github/stars/ScoofyTheFox/Discord-Furry-Bot?style=for-the-badge)
+![License](https://img.shields.io/github/license/ScoofyTheFox/Discord-Furry-Bot?style=for-the-badge)
+![Node](https://img.shields.io/badge/node-%3E%3D18-green?style=for-the-badge)
+![Discord.js](https://img.shields.io/badge/discord.js-v14-blue?style=for-the-badge)
+![Status](https://img.shields.io/badge/status-active-success?style=for-the-badge)
 
 ---
 
-## Step 3 — Invite the bot to your server
+## 🐾 About
 
-1. Go to discord.com/developers/applications → your app
-2. **OAuth2 → URL Generator**
-3. Check `bot` and `applications.commands`
-4. Under Bot Permissions check `Administrator`
-5. Copy the URL → open in browser → invite to your server
+**FurBot** is a fully customizable furry Discord bot made by **Scoofyx**.
 
-Also go to the **Bot** tab and turn on all 3 **Privileged Gateway Intents**.
+It’s designed to be:
 
----
+* easy to set up ⚡
+* easy to customize 🎨
+* easy to deploy 🚆
 
-## Step 4 — Open a terminal in this folder
-
-- **Windows**: Right click inside the folder → "Open in Terminal"  
-  or press `Win + R` → type `cmd` → `cd` to the folder path
-- **Mac/Linux**: Right click → "New Terminal at Folder"
+👉 Use it as a **template** and turn it into your own bot.
 
 ---
 
-## Step 5 — Install and run
+## ✨ Features
+
+* 🧩 Extremely customizable (`settings.js`)
+* 🐾 Furry generator (species, traits, vibes, etc.)
+* 🛠️ Moderation system (warns, timeouts, logs)
+* 🎉 Giveaways + polls
+* 🤖 Automod (optional)
+* 👋 Welcome & goodbye system
+* 💾 Optional JSONBin storage
+* 🚆 Railway ready
+
+---
+
+## 🚀 Quick Start
 
 ```bash
-npm install          # install dependencies (only needed once)
-node deploy.js       # register slash commands (only needed once, or after changes)
-npm start            # start the bot!
-```
-
-You should see:
-```
-🌐 Keep-alive on :3000
-📦 Store loaded — 0 channel(s), 0 role(s), 0 setting override(s)
-✅ [admin]
-✅ [fun]
-✅ [furry]
-...
-🐾 YourBot#1234 is online!
+git clone https://github.com/ScoofyTheFox/Discord-Furry-Bot
+cd Discord-Furry-Bot
+npm install
+node deploy.js
+npm start
 ```
 
 ---
 
-## Step 6 — Set up channels and roles in Discord
+## ⚙️ Setup
 
-Use these commands in your server (you need Administrator):
+Fill in your `.env`:
 
-- `/setup-channels` — set your log channel, welcome channel, etc.
-- `/setup-roles` — set auto-role, mute role, etc.
-- `/setup-view` — see everything that's configured
+```
+BOT_TOKEN=your_token
+CLIENT_ID=your_client_id
+GUILD_ID=your_server_id
+JSONBIN_KEY=optional
+```
+
+Then in Discord:
+
+* `/setup-channels`
+* `/setup-roles`
+* `/setup-view`
+
+⚠️ Without JSONBin, setup resets on restart
 
 ---
 
-## Tips
+## 🎨 Customization
 
-- To stop the bot: press `Ctrl + C` in the terminal
-- To restart: run `npm start` again
-- If you add/remove commands in `commands/`: run `node deploy.js` again
-- JSONBin bin ID will be printed on first run — add it to `.env` so data persists
-- When you're ready to push to GitHub: uncomment `.env` in `.gitignore`!
+Everything important is in:
+
+```
+settings.js
+```
+
+You can change:
+
+* bot name 🐾
+* colors + status 🎨
+* systems on/off 🧩
+* messages + responses 💬
+* furry content 🐺
 
 ---
 
-## Customization
+## 🚆 Deploy (Railway)
 
-Edit `settings.js` to change:
-- Bot name, color, status
-- Which systems are enabled/disabled
-- Welcome messages, moderation settings, etc.
+1. Push to GitHub
+2. Go to Railway → New Project
+3. Deploy from repo
+4. Add env variables
+5. Done
+
+---
+
+## 💡 Notes
+
+* No database required
+* `.env` should NOT be uploaded
+* `node_modules` not needed
+
+---
+
+## 📄 License
+
+MIT License
+
+✔️ You can use, modify, and share
+👍 Credit is appreciated but **not required**
+
+---
+
+## ⭐ Support
+
+If you like this project:
+
+* ⭐ Star the repo
+* 🍴 Fork it
+* 🐾 Make your own version
+
+---
+
+## 🐾 Made by Scoofyx
+
+for furries, devs, and chaotic gremlins
