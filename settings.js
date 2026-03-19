@@ -9,7 +9,8 @@
 //  ── Setup methods ─────────────────────────────────────────────
 //
 //  ⭐ Manual setup (RECOMMENDED)
-//  → Set channel IDs and role IDs directly in this file.
+//  → Set channel IDs and role IDs directly in this file
+//  → Leave empty ('') to disable or not use something
 //
 //  ⚠️ /setup commands (OPTIONAL)
 //  → Only works if JSONBin is enabled in .env
