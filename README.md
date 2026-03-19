@@ -1,9 +1,8 @@
 # 🐾 FurBot
-
 ### Customizable Furry Discord Bot Template
 
-![GitHub stars](https://img.shields.io/github/stars/ScoofyTheFox/Discord-Furry-Bot?style=for-the-badge)
-![License](https://img.shields.io/github/license/ScoofyTheFox/Discord-Furry-Bot?style=for-the-badge)
+![GitHub stars](https://img.shields.io/github/stars/ScoofyTheFox/Customizable-Furry-Discord-Bot?style=for-the-badge)
+![License](https://img.shields.io/github/license/ScoofyTheFox/Customizable-Furry-Discord-Bot?style=for-the-badge)
 ![Node](https://img.shields.io/badge/node-%3E%3D18-green?style=for-the-badge)
 ![Discord.js](https://img.shields.io/badge/discord.js-v14-blue?style=for-the-badge)
 ![Status](https://img.shields.io/badge/status-active-success?style=for-the-badge)
@@ -14,8 +13,7 @@
 
 **FurBot** is a fully customizable furry Discord bot made by **Scoofyx**.
 
-It’s designed to be:
-
+It's designed to be:
 * easy to set up ⚡
 * easy to customize 🎨
 * easy to deploy 🚆
@@ -40,8 +38,8 @@ It’s designed to be:
 ## 🚀 Quick Start
 
 ```bash
-git clone https://github.com/ScoofyTheFox/Discord-Furry-Bot
-cd Discord-Furry-Bot
+git clone https://github.com/ScoofyTheFox/Customizable-Furry-Discord-Bot
+cd Customizable-Furry-Discord-Bot
 npm install
 node deploy.js
 npm start
@@ -51,8 +49,8 @@ npm start
 
 ## ⚙️ Setup
 
-Fill in your `.env`:
-
+### Local
+Copy `.env.example` to `.env` and fill in your values:
 ```
 BOT_TOKEN=your_token
 CLIENT_ID=your_client_id
@@ -60,71 +58,72 @@ GUILD_ID=your_server_id
 JSONBIN_KEY=optional
 ```
 
+### Railway
+Set the same variables in your Railway project → **Variables** tab.
+Railway variables automatically override `.env` — no file upload needed.
+
 Then in Discord:
+* `/setup-channels` — set bot channels *(requires JSONBin to save)*
+* `/setup-roles` — set bot roles *(requires JSONBin to save)*
+* `/setup-view` — view current config *(requires JSONBin to save)*
 
-* `/setup-channels`
-* `/setup-roles`
-* `/setup-view`
-
-⚠️ Without JSONBin, setup resets on restart
+> ⚠️ Without JSONBin, `/setup` changes reset on restart.
+> You can also set IDs manually in `settings.js` as a permanent alternative.
 
 ---
 
 ## 🎨 Customization
 
-Everything important is in:
+Everything is in `settings.js` — no other files need touching:
 
-```
-settings.js
-```
-
-You can change:
-
-* bot name 🐾
-* colors + status 🎨
-* systems on/off 🧩
-* messages + responses 💬
-* furry content 🐺
+* Bot name, color & status 🐾
+* Enable/disable systems 🧩
+* Welcome & goodbye messages 👋
+* Furry species, traits, vibes & colors 🐺
+* Fun command responses (8ball, roasts, compliments, etc.) 💬
+* Automod filters & thresholds 🤖
+* Moderation settings ⚖️
+* Giveaway & poll options 🎉
 
 ---
 
 ## 🚆 Deploy (Railway)
 
-1. Push to GitHub
-2. Go to Railway → New Project
-3. Deploy from repo
-4. Add env variables
-5. Done
+1. Fork or push to GitHub
+2. Go to [Railway](https://railway.app) → New Project → Deploy from repo
+3. Add environment variables in the Variables tab:
+   - `BOT_TOKEN`
+   - `CLIENT_ID`
+   - `GUILD_ID`
+   - `JSONBIN_KEY` *(optional)*
+4. Railway auto-deploys on every push ✅
 
 ---
 
 ## 💡 Notes
 
 * No database required
-* `.env` should NOT be uploaded
-* `node_modules` not needed
+* `.env` should **never** be uploaded to GitHub — use `.env.example` as a template
+* `node_modules/` is not needed in the repo — Railway runs `npm install` automatically
+* Run `node deploy.js` once after cloning to register slash commands with Discord
 
 ---
 
 ## 📄 License
 
-MIT License
-
-✔️ You can use, modify, and share
-👍 Credit is appreciated but **not required**
+MIT License — you can use, modify, and share freely.
+Credit is appreciated but **not required**. 🐾
 
 ---
 
 ## ⭐ Support
 
 If you like this project:
-
 * ⭐ Star the repo
-* 🍴 Fork it
-* 🐾 Make your own version
+* 🍴 Fork it and make it yours
+* 🐾 Share it with other furries
 
 ---
 
 ## 🐾 Made by Scoofyx
-
-for furries, devs, and chaotic gremlins
+*for furries* 🌟
