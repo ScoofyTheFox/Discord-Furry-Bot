@@ -1,17 +1,24 @@
 // <==============================================================>
-//  🐾 PAWBOT - settings.js
+//  🐾 FURBOT - settings.js
 //
-//  Set Discord Token in .env!
+//  Set your Discord token in .env!
 //
-//  This is the ONLY config/settings file you need to edit when forking or cloning.
-//  Push changes to GitHub → Railway auto-redeploys.
+//  This is the ONLY config file you need to edit when using this bot.
+//  Any changes → push to GitHub → Railway auto-redeploys.
 //
-// Channels and roles can be set manually here using IDs (★RECOMMENDED)
+//  ── Setup methods ─────────────────────────────────────────────
 //
-// ⚠️ The /setup system only works if you're using JSONBin.
-// 🚫If not, you'll need to configure everything manually here!
+//  ⭐ Manual setup (RECOMMENDED)
+//  → Set channel IDs and role IDs directly in this file.
 //
-//  tutorial here: (coming soon)
+//  ⚠️ /setup commands (OPTIONAL)
+//  → Only works if JSONBin is enabled in .env
+//  → Saves automatically but requires API key
+//
+//  ❗ If you are NOT using JSONBin:
+//  → You MUST configure channels/roles manually below
+//
+//  📖 tutorial: (coming soon)
 // <==============================================================>
 
                                                                                                                                                        
@@ -105,6 +112,26 @@ module.exports = {
   automod_system:   false,
   welcome_system:   true,
   utility_system:   true,
+  // ── Manual setup (channels & roles) ───────────────────────────
+// Used if you are NOT using /setup (JSONBin)
+
+channels: {
+  log: '',             // mod logs channel ID
+  member_log: '',      // join/leave logs
+  welcome: '',         //example: log: '134134040183081', 
+  goodbye: '',
+  giveaway: '',
+  fursuit: '',
+  announcements: ''
+},
+
+roles: {
+  auto_role: '',       // role given on join
+  mute: '',            // mute role
+  announcement: '',    // ping role for announcements
+  giveaway: '',        // required role for giveaways
+  fursuit: ''          // ping role for fursuit posts
+},
 
 
   // ── Welcome & goodbye ─────────────────────────────────────────
