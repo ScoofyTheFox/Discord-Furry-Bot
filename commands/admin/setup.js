@@ -1,6 +1,6 @@
 const { SlashCommandBuilder, PermissionFlagsBits, ChannelType } = require('discord.js');
-const emb  = require('../../utils/embed');
-const settings = require('../../settings'); // 👈 ADD THIS
+const emb = require('../../utils/embed');
+const settings = require('../../settings');
 
 // ─────────────────────────────────────────────
 // Setup Channels
@@ -48,8 +48,11 @@ const setupChannels = {
     }
 
     await interaction.reply({
-      embeds: [emb.success(client, 'Channels Saved 💾',
-        changes.join('\n') + '\n\n*Saved to JSONBin — overrides manual settings.*')],
+      embeds: [emb.success(
+        client,
+        'Channels Saved 💾',
+        changes.join('\n') + '\n\n*Saved to JSONBin — takes priority over manual settings.*'
+      )],
       ephemeral: true
     });
   },
@@ -97,15 +100,18 @@ const setupRoles = {
     }
 
     await interaction.reply({
-      embeds: [emb.success(client, 'Roles Saved 💾',
-        changes.join('\n') + '\n\n*Saved to JSONBin — overrides manual settings.*')],
+      embeds: [emb.success(
+        client,
+        'Roles Saved 💾',
+        changes.join('\n') + '\n\n*Saved to JSONBin — takes priority over manual settings.*'
+      )],
       ephemeral: true
     });
   },
 };
 
 // ─────────────────────────────────────────────
-// Setup View (UPDATED 🔥)
+// Setup View
 // ─────────────────────────────────────────────
 
 const setupView = {
@@ -150,13 +156,15 @@ const setupView = {
     });
 
     await interaction.reply({
-      embeds: [emb.base(client)
-        .setTitle('📋 Current Configuration')
-        .addFields(
-          { name: '📺 Channels', value: channelLines.join('\n') },
-          { name: '🎭 Roles', value: roleLines.join('\n') }
-        )
-        .setFooter({ text: 'JSONBin overrides manual settings' })],
+      embeds: [
+        emb.base(client)
+          .setTitle('📋 Current Configuration')
+          .addFields(
+            { name: '📺 Channels', value: channelLines.join('\n'), inline: false },
+            { name: '🎭 Roles', value: roleLines.join('\n'), inline: false }
+          )
+          .setFooter({ text: 'JSONBin takes priority over manual settings' })
+      ],
       ephemeral: true
     });
   },
