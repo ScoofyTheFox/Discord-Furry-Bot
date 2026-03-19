@@ -18,7 +18,10 @@
 //  ❗ If you are NOT using JSONBin:
 //  → You MUST configure channels/roles manually below
 //
-//  📖 tutorial: (coming soon)
+//  💡 Tip: Enable Developer Mode in Discord to copy IDs
+//  → Settings → Advanced → Developer Mode
+//
+//  📖 Tutorial: (coming soon)
 // <==============================================================>
 
                                                                                                                                                        
