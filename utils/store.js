@@ -12,7 +12,7 @@
 //  Free tier at jsonbin.io is plenty for this.
 // ================================================================
 
-const KEY      = process.env.JSONBIN_KEY;
+// KEY is read lazily so Railway/dotenv vars are always loaded first
 const BIN_ENV  = 'JSONBIN_BIN_furbot';
 const BASE     = 'https://api.jsonbin.io/v3';
 
@@ -31,15 +31,24 @@ async function http(method, path, body) {
   const { default: fetch } = await import('node-fetch');
   const res = await fetch(`${BASE}${path}`, {
     method,
-    headers: { 'Content-Type': 'application/json', 'X-Master-Key': KEY, 'X-Bin-Private': 'true' },
+    headers: { 'Content-Type': 'application/json', 'X-Master-Key': process.env.JSONBIN_KEY, 'X-Bin-Private': 'true' },
     body: body ? JSON.stringify(body) : undefined,
   });
-  if (!res.ok) throw new Error(`JSONBin ${method} ${path} → ${res.status}`);
+  if (!res.ok) {
+    if (res.status === 401) {
+      throw new Error(`JSONBin 401 Unauthorized — your JSONBIN_KEY is invalid or missing. Check it at jsonbin.io → API Keys`);
+    }
+    if (res.status === 404) {
+      throw new Error(`JSONBin 404 Not Found — your JSONBIN_BIN_furbot ID is wrong or deleted. Remove it from env vars to auto-create a new bin`);
+    }
+    throw new Error(`JSONBin ${method} ${path} → ${res.status}`);
+  }
   return res.json();
 }
 
 // ── Load from JSONBin on startup ──────────────────────────────
 async function load() {
+  const KEY = process.env.JSONBIN_KEY;
   if (!KEY) {
     const defaults = require('../settings');
     const hasManualChannels = Object.values(defaults.channels || {}).some(v => v && v.trim() !== '');
@@ -64,16 +73,16 @@ async function load() {
     return;
   }
 
-  if (!binId) {
-    // First ever run — create the bin
-    const res = await http('POST', '/b', store);
-    binId = res.metadata.id;
-    console.log('\n📦 JSONBin created! Add this env var to Railway:');
-    console.log(`   JSONBIN_BIN_furbot=${binId}\n`);
-    return;
-  }
-
   try {
+    if (!binId) {
+      // First ever run — create the bin
+      const res = await http('POST', '/b', store);
+      binId = res.metadata.id;
+      console.log('\n📦 JSONBin bin created! Add this to your Railway Variables:');
+      console.log(`   JSONBIN_BIN_furbot=${binId}\n`);
+      return;
+    }
+
     const res = await http('GET', `/b/${binId}/latest`);
     Object.assign(store, res.record || {});
     if (!store.channels) store.channels = {};
@@ -81,12 +90,14 @@ async function load() {
     if (!store.settings) store.settings = {};
     console.log(`📦 Store loaded — ${Object.keys(store.channels).length} channel(s), ${Object.keys(store.roles).length} role(s), ${Object.keys(store.settings).length} setting override(s)`);
   } catch (e) {
-    console.error('❌ Failed to load store from JSONBin:', e.message);
+    console.error('\n❌ JSONBin error:', e.message);
+    console.error('   The bot will still run but /setup changes won\'t be saved.\n');
   }
 }
 
 // ── Save (debounced — batches rapid changes into one write) ───
 function save() {
+  const KEY = process.env.JSONBIN_KEY;
   if (!KEY || !binId) return;
   clearTimeout(saveTimer);
   saveTimer = setTimeout(async () => {
